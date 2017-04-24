@@ -1,13 +1,19 @@
 package hu.abstergo.ati.kopapirgyikspock;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class FXMLController implements Initializable {
     
@@ -24,13 +30,18 @@ public class FXMLController implements Initializable {
     @FXML
     private TextField tfPlayer1;
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-       player1=new Player(tfPlayer1.getText());
-       player2=new Player(tfPlayer2.getText());
-       for(int i=0;i<4; i++){
-           player1.setPontszam(player1.getPontszam()+1);
-       }
-       System.out.println(player1.toString());
+    private void handleButtonAction(ActionEvent event) throws IOException {
+        
+       Player.setNev1(tfPlayer1.getText());
+       Player.setNev1(tfPlayer2.getText());
+       
+       Parent player1 = FXMLLoader.load(getClass().getResource("/fxml/Player1.fxml"));
+       Scene player1_scene=new Scene(player1);
+       Stage player1_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+       player1_stage.hide();
+       player1_stage.setScene(player1_scene);
+       player1_stage.show();
+       /* */
     }
     
     @Override

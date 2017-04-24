@@ -7,7 +7,9 @@ package hu.abstergo.ati.kopapirgyikspock;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 
 /**
  * FXML Controller class
@@ -16,12 +18,15 @@ import javafx.fxml.Initializable;
  */
 public class Player1Controller implements Initializable {
 
+    @FXML
+    private Label lbnev;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        lbnev.setText(Player.getNev1());
     }    
     
 }
