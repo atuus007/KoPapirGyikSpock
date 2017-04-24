@@ -8,11 +8,11 @@
 
 <AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.abstergo.ati.kopapirgyikspock.FXMLController">
     <children>
-        <Button fx:id="button" layoutX="57.0" layoutY="120.0" onAction="#handleButtonAction" text="Start" />
+        <Button fx:id="button" layoutX="62.0" layoutY="120.0" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="60.0" text="Start" />
         <Label fx:id="label" layoutX="57.0" layoutY="36.0" minHeight="16" minWidth="69" text="Játékos 1" />
       <Label fx:id="label1" layoutX="57.0" layoutY="72.0" minHeight="16" minWidth="69" text="Játékos 2" />
       <TextField fx:id="tfPlayer1" layoutX="126.0" layoutY="32.0" />
       <TextField fx:id="tfPlayer2" layoutX="126.0" layoutY="68.0" />
-      <Button layoutX="201.0" layoutY="120.0" mnemonicParsing="false" text="Exit" />
+      <Button layoutX="215.0" layoutY="120.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" text="Exit" />
     </children>
 </AnchorPane>

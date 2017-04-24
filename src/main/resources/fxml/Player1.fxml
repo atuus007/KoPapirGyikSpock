@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,13 +8,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="hu.abstergo.ati.kopapirgyikspock.Player1Controller">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.abstergo.ati.kopapirgyikspock.Player1Controller">
    <children>
-      <Label fx:id="lbnev" layoutX="243.0" layoutY="119.0" prefHeight="106.0" prefWidth="217.0" text="Label">
-         <font>
-            <Font size="57.0" />
-         </font>
-      </Label>
+      <Button fx:id="btnRock" layoutX="14.0" layoutY="136.0" mnemonicParsing="false" onAction="#setOnAction" prefHeight="25.0" prefWidth="73.0" text="Kő" />
+      <Button fx:id="btnPaper" layoutX="14.0" layoutY="187.0" mnemonicParsing="false" onAction="#setOnAction" prefHeight="25.0" prefWidth="73.0" text="Papir" />
+      <Button fx:id="btnOllo" layoutX="14.0" layoutY="233.0" mnemonicParsing="false" onAction="#setOnAction" prefHeight="25.0" prefWidth="73.0" text="Olló" />
+      <Button fx:id="btnLizard" layoutX="14.0" layoutY="90.0" mnemonicParsing="false" onAction="#setOnAction" prefHeight="25.0" prefWidth="73.0" text="Gyík" />
+      <Button fx:id="btnSpock" layoutX="14.0" layoutY="286.0" mnemonicParsing="false" onAction="#setOnAction" prefHeight="25.0" prefWidth="73.0" text="Spock" />
+      <ImageView fitHeight="250.0" fitWidth="399.0" layoutX="187.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

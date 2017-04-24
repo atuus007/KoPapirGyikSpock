@@ -7,7 +7,10 @@ package hu.abstergo.ati.kopapirgyikspock;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 
 /**
  * FXML Controller class
@@ -16,6 +19,17 @@ import javafx.fxml.Initializable;
  */
 public class Player2Controller implements Initializable {
 
+    @FXML
+    private Button btnRock;
+    @FXML
+    private Button btnPaper;
+    @FXML
+    private Button btnOllo;
+    @FXML
+    private Button btnLizzard;
+    @FXML
+    private Button btnSpock;
+
     /**
      * Initializes the controller class.
      */
@@ -23,5 +37,9 @@ public class Player2Controller implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void setOnAction(ActionEvent event) {
+    }
     
 }
