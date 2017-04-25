@@ -16,10 +16,10 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class FXMLController implements Initializable {
-    
+
     @FXML
     private Label label;
-    
+
     private Player player1, player2;
     @FXML
     private Button button;
@@ -29,23 +29,35 @@ public class FXMLController implements Initializable {
     private TextField tfPlayer2;
     @FXML
     private TextField tfPlayer1;
+
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException {
+
+        Player.setNev1(tfPlayer1.getText());
+        Player.setNev2(tfPlayer2.getText());
+        Parent root;
+        Stage stage;
+        //stage = (Stage)button.getScene().getWindow();
         
-       Player.setNev1(tfPlayer1.getText());
-       Player.setNev1(tfPlayer2.getText());
-       
-       Parent player1 = FXMLLoader.load(getClass().getResource("/fxml/Player1.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            root = FXMLLoader.load(getClass().getResource("/fxml/Player1.fxml"));
+            stage.hide();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        
+        /*Parent player1 = FXMLLoader.load(getClass().getResource("/fxml/Player1.fxml"));
        Scene player1_scene=new Scene(player1);
        Stage player1_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
        player1_stage.hide();
        player1_stage.setScene(player1_scene);
-       player1_stage.show();
-       /* */
+       player1_stage.show();*/
+
+ /* */
     }
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 }
