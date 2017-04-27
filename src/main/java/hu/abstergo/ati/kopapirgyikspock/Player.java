@@ -11,9 +11,29 @@ package hu.abstergo.ati.kopapirgyikspock;
  */
 public class Player {
 
-    private static String nev1, nev2, valast;
+    private static String nev1, nev2, valast1, valasz2;
     private static int pontszam_p1, pontszam_p2;
 
+    public static void setValast1(String valast1) {
+        Player.valast1 = valast1;
+    }
+
+    public static void setValasz2(String valasz2) {
+      
+        
+        Player.valasz2 = valasz2;
+    }
+
+    public static String getValast1() {
+        return valast1;
+    }
+
+    public static String getValasz2() {
+        return valasz2;
+    }
+        
+    
+    
     public static void setNev1(String nev1) {
         Player.nev1 = nev1;
     }

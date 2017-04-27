@@ -41,7 +41,9 @@ public class Player1Controller implements Initializable {
     private Button btnSpock;
     @FXML
     private Label lbPlayerName;
-
+    
+    private String valasz;
+    
     /**
      * Initializes the controller class.
      */
@@ -52,6 +54,25 @@ public class Player1Controller implements Initializable {
 
     @FXML
     private void setOnAction(ActionEvent event) {
+        Button btn = (Button)event.getSource();
+        
+        switch(btn.getId()){
+            case "btnRock": Player.setValast1("Kő"); break;
+            case "btnPaper": Player.setValast1("Papír"); break;
+            case "btnOllo": Player.setValast1("Ollo"); break;
+            case "btnLizard": Player.setValast1("Gyik"); break;
+            case "btnSpock": Player.setValast1("Spock"); break;
+            default:break;
+            
+          
+        }
+        
+        
+        System.out.println(Player.getValast1());
+        
+        
+        
+        
         Stage stage;
         Parent root;
         //stage = (Stage)button.getScene().getWindow();

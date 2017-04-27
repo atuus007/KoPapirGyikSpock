@@ -32,20 +32,23 @@ public class FXMLController implements Initializable {
 
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException {
+        if (!(tfPlayer1.getText().isEmpty()) && !(tfPlayer2.getText().isEmpty())) {
+            Player.setNev1(tfPlayer1.getText());
+            Player.setNev2(tfPlayer2.getText());
+            Parent root;
+            Stage stage;
+            //stage = (Stage)button.getScene().getWindow();
 
-        Player.setNev1(tfPlayer1.getText());
-        Player.setNev2(tfPlayer2.getText());
-        Parent root;
-        Stage stage;
-        //stage = (Stage)button.getScene().getWindow();
-        
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("/fxml/Player1.fxml"));
             stage.hide();
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-        
+        }else{
+            System.out.println("Ne hagyd üresen!!");
+            
+        }
         /*Parent player1 = FXMLLoader.load(getClass().getResource("/fxml/Player1.fxml"));
        Scene player1_scene=new Scene(player1);
        Stage player1_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

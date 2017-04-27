@@ -23,9 +23,7 @@ public class ResultFXMLController implements Initializable {
     @FXML
     private Label lbP2;
 
-    /**
-     * Initializes the controller class.
-     */
+  
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         lbP1.setText(Player.getNev1());
