@@ -54,23 +54,20 @@ public class Player2Controller implements Initializable {
     @FXML
     private void setOnAction(ActionEvent event) {
         Button btn = (Button)event.getSource();
-        if((Player.getValasz2().isEmpty())){
-            Player.setValasz2("");
-        }
+       String asd="";
         switch(btn.getId()){
             case "btnRock": Player.setValasz2("Kő"); break;
             case "btnPaper": Player.setValasz2("Papír"); break;
-            case "btnOllo": Player.setValasz2("Ollo"); break;
-            case "btnLizard": Player.setValasz2("Gyik"); break;
+            case "btnOllo": Player.setValasz2("Olló"); break;
+            case "btnLizzard": Player.setValasz2("Gyík"); break;
             case "btnSpock": Player.setValasz2("Spock"); break;
             default:break;
             
           
         }
-        
-        
+       
         System.out.println(Player.getValasz2());
-        /*
+        
         
         
         Stage stage;
@@ -85,7 +82,7 @@ public class Player2Controller implements Initializable {
             stage.show();
         } catch (IOException ex) {
             Logger.getLogger(Player2Controller.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
+        }
 
     }
 

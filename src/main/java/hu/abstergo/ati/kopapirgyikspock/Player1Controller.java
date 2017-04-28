@@ -75,8 +75,8 @@ public class Player1Controller implements Initializable {
         
         Stage stage;
         Parent root;
-        //stage = (Stage)button.getScene().getWindow();
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage = (Stage)btn.getScene().getWindow();
+        //stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         try {
             root = FXMLLoader.load(getClass().getResource("/fxml/Player2.fxml"));
             stage.hide();

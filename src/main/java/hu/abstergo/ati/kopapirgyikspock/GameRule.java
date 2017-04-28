@@ -16,12 +16,5 @@ public class GameRule {
         this.v2=valasz2;
         
     }
-    public String rule(){
-        if(v1.equals("Kő")&&(v2.equals("Olló")||v2.equals("Gyík"))){
-            Player.setPontszam1(Player.getPontszam1()+1);
-            return Player.getNev1();
-        }else {
-             return Player.getNev2();
-        }
-    }
+    
 }
