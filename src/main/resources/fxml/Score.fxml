@@ -41,7 +41,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="btnGameOver" mnemonicParsing="false" onAction="#setGameOverAction" prefHeight="25.0" prefWidth="106.0" text="Vége" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <Button fx:id="btnGameOver" mnemonicParsing="false" onAction="#setGameOverAction" prefHeight="25.0" prefWidth="106.0" text="Vissza" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="174.0" layoutY="31.0" prefHeight="43.0" prefWidth="274.0" text="Score table">

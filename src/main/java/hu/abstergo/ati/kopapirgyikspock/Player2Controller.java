@@ -76,7 +76,7 @@ public class Player2Controller implements Initializable {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         try {
             root = FXMLLoader.load(getClass().getResource("/fxml/ResultFXML.fxml"));
-            stage.hide();
+            //stage.hide();
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();

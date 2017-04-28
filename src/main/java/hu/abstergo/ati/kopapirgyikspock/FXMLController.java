@@ -29,6 +29,8 @@ public class FXMLController implements Initializable {
     private TextField tfPlayer2;
     @FXML
     private TextField tfPlayer1;
+    @FXML
+    private Button btnExit;
 
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException {
@@ -41,7 +43,7 @@ public class FXMLController implements Initializable {
 
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("/fxml/Player1.fxml"));
-            stage.hide();
+            //stage.hide();
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
@@ -62,5 +64,11 @@ public class FXMLController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+    }
+
+    @FXML
+    private void onAppExit(ActionEvent event) {
+        Stage stage = (Stage) btnExit.getScene().getWindow();
+        stage.close();
     }
 }
