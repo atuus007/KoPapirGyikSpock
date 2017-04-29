@@ -19,6 +19,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 /**
@@ -43,32 +45,34 @@ public class Player1Controller implements Initializable {
     private Label lbPlayerName;
     
     private String valasz;
+    @FXML
+    private ImageView imgPlayer1;
     
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-           lbPlayerName.setText(Player.getNev1());
+           lbPlayerName.setText(Player.getName1());
     }    
 
     @FXML
     private void setOnAction(ActionEvent event) {
         Button btn = (Button)event.getSource();
-        
+        Image img;
         switch(btn.getId()){
-            case "btnRock": Player.setValast1("Kő"); break;
-            case "btnPaper": Player.setValast1("Papír"); break;
-            case "btnOllo": Player.setValast1("Ollo"); break;
-            case "btnLizard": Player.setValast1("Gyik"); break;
-            case "btnSpock": Player.setValast1("Spock"); break;
+            case "btnRock": Player.setGuess1("Rock"); break;
+            case "btnPaper": Player.setGuess1("Paper"); break;
+            case "btnOllo": Player.setGuess1("Scissor"); break;
+            case "btnLizard": Player.setGuess1("Lizzard"); break;
+            case "btnSpock": Player.setGuess1("Spock"); break;
             default:break;
             
           
         }
         
         
-        System.out.println(Player.getValast1());
+        System.out.println(Player.getGuess1());
         
         
         

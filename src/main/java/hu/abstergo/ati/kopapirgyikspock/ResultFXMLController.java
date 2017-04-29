@@ -19,6 +19,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 /**
@@ -38,61 +40,144 @@ public class ResultFXMLController implements Initializable {
     private Button btnSocre;
     @FXML
     private Button btnExit;
+    @FXML
+    private ImageView imgPlayer1;
+    @FXML
+    private ImageView imgPlayer2;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        lbP1.setText(Player.getNev1());
-        lbP2.setText(Player.getNev2());
+        lbP1.setText(Player.getName1());
+        lbP2.setText(Player.getName2());
         rule();
+        setPictures();
         valueCleaning();
     }
-
-    public void rule() {
-        System.out.println(Player.getValast1() + " " + Player.getValasz2());
-        if (!(Player.getValast1().equals(""))) {
-            if (Player.getValast1().equals("Kő") && (Player.getValasz2().equals("Olló") || Player.getValasz2().equals("Gyík"))) {
-                Player.setPontszam1(Player.getPontszam1() + 1);
-            }
-            if (Player.getValast1().equals("Papír") && (Player.getValasz2().equals("Kő") || Player.getValasz2().equals("Spock"))) {
-                Player.setPontszam1(Player.getPontszam1() + 1);
-            }
-            if (Player.getValast1().equals("Olló") && (Player.getValasz2().equals("Papír") || Player.getValasz2().equals("Gyík"))) {
-                Player.setPontszam1(Player.getPontszam1() + 1);
-            }
-            if (Player.getValast1().equals("Gyík") && (Player.getValasz2().equals("Papír") || Player.getValasz2().equals("Spock"))) {
-                Player.setPontszam1(Player.getPontszam1() + 1);
-            }
-            if (Player.getValast1().equals("Spock") && (Player.getValasz2().equals("Olló") || Player.getValasz2().equals("Kő"))) {
-                Player.setPontszam1(Player.getPontszam1() + 1);
-            }
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////6
-            if (Player.getValasz2().equals("Kő") && (Player.getValast1().equals("Olló") || Player.getValast1().equals("Gyík"))) {
-                Player.setPontszam2(Player.getPontszam2() + 1);
-            }
-            if (Player.getValasz2().equals("Papír") && (Player.getValast1().equals("Kő") || Player.getValast1().equals("Spock"))) {
-                Player.setPontszam2(Player.getPontszam2() + 1);
-            }
-            if (Player.getValasz2().equals("Olló") && (Player.getValast1().equals("Papír") || Player.getValast1().equals("Gyík"))) {
-                Player.setPontszam2(Player.getPontszam2() + 1);
-            }
-            if (Player.getValasz2().equals("Gyík") && (Player.getValast1().equals("Papír") || Player.getValast1().equals("Spock"))) {
-                Player.setPontszam2(Player.getPontszam2() + 1);
-            }
-            if (Player.getValasz2().equals("Spock") && (Player.getValast1().equals("Olló") || Player.getValast1().equals("Kő"))) {
-                Player.setPontszam2(Player.getPontszam2() + 1);
-            }
-
-            if (Player.getValast1().equals(Player.getValasz2())/*||Player.getValasz2().equals(Player.getValast1())*/) {
-                Player.setPontszam1(Player.getPontszam1() + 1);
-                Player.setPontszam2(Player.getPontszam2() + 1);
-            }
+    public void setPictures(){
+       
+        switch(Player.getGuess1()){
+            case "Rock": imgPlayer1.setImage(new Image("/img/rock.png")); break;
+            case "Paper": imgPlayer1.setImage(new Image("/img/paper.png")); break;
+            case "Scissor": imgPlayer1.setImage(new Image("/img/scissor.png")); break;
+            case "Lizzard": System.out.println("asdf"); break;
+            case "Spock": imgPlayer1.setImage(new Image("/img/spock.png")); break;
+            default:break;
+            
+          
         }
+        switch(Player.getGuess2()){
+            case "Rock": imgPlayer2.setImage(new Image("/img/rock.png")); break;
+            case "Paper": imgPlayer2.setImage(new Image("/img/paper.png")); break;
+            case "Scissor": imgPlayer2.setImage(new Image("/img/scissor.png")); break;
+            case "Lizzard": System.out.println("asdf"); break;
+            case "Spock": imgPlayer2.setImage(new Image("/img/spock.png")); break;
+            default:break;
+            
+          
+        }
+    }
+    
+    public void rule() {
+        System.out.println(Player.getGuess1() + " " + Player.getGuess2());
 
+        if (Player.getGuess1().equals("Rock") && Player.getGuess2().equals("Rock")) {
+            Player.setPontszam1(Player.getPontszam1() + 1);
+            Player.setPontszam2(Player.getPontszam2() + 1);
+        }
+        if (Player.getGuess1().equals("Rock") && Player.getGuess2().equals("Paper")) {
+            Player.setPontszam2(Player.getPontszam2() + 1);
+        }
+        if (Player.getGuess1().equals("Rock") && Player.getGuess2().equals("Scissor")) {
+            Player.setPontszam1(Player.getPontszam1() + 1);
+        }
+        if (Player.getGuess1().equals("Rock") && Player.getGuess2().equals("Lizzard")) {
+            Player.setPontszam1(Player.getPontszam1() + 1);
+        }
+        if (Player.getGuess1().equals("Rock") && Player.getGuess2().equals("Spock")) {
+            Player.setPontszam2(Player.getPontszam2() + 1);
+        }
+        //////////////////////////////////////////////////
+
+        if (Player.getGuess1().equals("Paper") && Player.getGuess2().equals("Rock")) {
+            Player.setPontszam1(Player.getPontszam1() + 1);
+        }
+        if (Player.getGuess1().equals("Paper") && Player.getGuess2().equals("Paper")) {
+            Player.setPontszam2(Player.getPontszam2() + 1);
+            Player.setPontszam1(Player.getPontszam1() + 1);
+        }
+        if (Player.getGuess1().equals("Paper") && Player.getGuess2().equals("Scissor")) {
+            Player.setPontszam2(Player.getPontszam2() + 1);
+        }
+        if (Player.getGuess1().equals("Paper") && Player.getGuess2().equals("Lizzard")) {
+
+            Player.setPontszam2(Player.getPontszam2() + 1);
+        }
+        if (Player.getGuess1().equals("Paper") && Player.getGuess2().equals("Spock")) {
+
+            Player.setPontszam1(Player.getPontszam1() + 1);
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////
+        if (Player.getGuess1().equals("Scissor") && Player.getGuess2().equals("Rock")) {
+            Player.setPontszam2(Player.getPontszam2() + 1);
+        }
+        if (Player.getGuess1().equals("Scissor") && Player.getGuess2().equals("Paper")) {
+            Player.setPontszam1(Player.getPontszam1() + 1);
+        }
+        if (Player.getGuess1().equals("Scissor") && Player.getGuess2().equals("Scissor")) {
+            Player.setPontszam2(Player.getPontszam2() + 1);
+            Player.setPontszam1(Player.getPontszam1() + 1);
+        }
+        if (Player.getGuess1().equals("Scissor") && Player.getGuess2().equals("Lizzard")) {
+            Player.setPontszam1(Player.getPontszam1() + 1);
+        }
+        if (Player.getGuess1().equals("Scissor") && Player.getGuess2().equals("Spock")) {
+            Player.setPontszam2(Player.getPontszam2() + 1);
+        }
+        //////////////////////////////////////////////////////////////6
+        /////////////////////////////////////////////////////////////////
+        if (Player.getGuess1().equals("Lizzard") && Player.getGuess2().equals("Rock")) {
+            Player.setPontszam2(Player.getPontszam2() + 1);
+        }
+        if (Player.getGuess1().equals("Lizzard") && Player.getGuess2().equals("Paper")) {
+            Player.setPontszam1(Player.getPontszam1() + 1);
+        }
+        if (Player.getGuess1().equals("Lizzard") && Player.getGuess2().equals("Scissor")) {
+            Player.setPontszam2(Player.getPontszam2() + 1);
+
+        }
+        if (Player.getGuess1().equals("Lizzard") && Player.getGuess2().equals("Lizzard")) {
+            Player.setPontszam1(Player.getPontszam1() + 1);
+            Player.setPontszam2(Player.getPontszam2() + 1);
+        }
+        if (Player.getGuess1().equals("Lizzard") && Player.getGuess2().equals("Spock")) {
+            Player.setPontszam1(Player.getPontszam1() + 1);
+        }
+        ////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////
+        if (Player.getGuess1().equals("Spock") && Player.getGuess2().equals("Rock")) {
+            Player.setPontszam1(Player.getPontszam1() + 1);
+        }
+        if (Player.getGuess1().equals("Spock") && Player.getGuess2().equals("Paper")) {
+            Player.setPontszam2(Player.getPontszam2() + 1);
+        }
+        if (Player.getGuess1().equals("Spock") && Player.getGuess2().equals("Scissor")) {
+            Player.setPontszam1(Player.getPontszam1() + 1);
+
+        }
+        if (Player.getGuess1().equals("Spock") && Player.getGuess2().equals("Lizzard")) {
+            Player.setPontszam2(Player.getPontszam2() + 1);
+
+        }
+        if (Player.getGuess1().equals("Spock") && Player.getGuess2().equals("Spock")) {
+            Player.setPontszam1(Player.getPontszam1() + 1);
+            Player.setPontszam2(Player.getPontszam2() + 1);
+        }
     }
 
     private void valueCleaning() {
-        Player.setValast1("");
-        Player.setValasz2("");
+        Player.setGuess1("");
+        Player.setGuess2("");
     }
 
     @FXML

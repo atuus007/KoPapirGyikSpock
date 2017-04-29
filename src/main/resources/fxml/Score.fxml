@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.abstergo.ati.kopapirgyikspock.ScoreController">
+<AnchorPane id="AnchorPane" prefHeight="343.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.abstergo.ati.kopapirgyikspock.ScoreController">
    <children>
       <GridPane layoutX="44.0" layoutY="147.0" prefHeight="158.0" prefWidth="538.0">
         <columnConstraints>
@@ -41,7 +41,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="btnGameOver" mnemonicParsing="false" onAction="#setGameOverAction" prefHeight="25.0" prefWidth="106.0" text="Vissza" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <Button fx:id="btnGameOver" mnemonicParsing="false" onAction="#setGameOverAction" prefHeight="25.0" prefWidth="106.0" text="Back" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="174.0" layoutY="31.0" prefHeight="43.0" prefWidth="274.0" text="Score table">

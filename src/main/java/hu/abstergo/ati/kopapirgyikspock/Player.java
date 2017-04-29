@@ -11,53 +11,61 @@ package hu.abstergo.ati.kopapirgyikspock;
  */
 public class Player {
 
-    private static String nev1, nev2, valast1, valasz2;
-    private static int pontszam_p1, pontszam_p2;
+    private static String name1, name2, guess1, guess2;
+    private static int pointPlayer1, pointPlayer2,id;
 
-    public static void setValast1(String valast1) {
-        Player.valast1 = valast1;
+    public static int getId() {
+        return id;
     }
 
-    public static void setValasz2(String valasz2) {
+    public static void setId(int id) {
+        Player.id = id;
+    }
+
+    public static void setGuess1(String guess1) {
+        Player.guess1 = guess1;
+    }
+
+    public static void setGuess2(String guess2) {
       
         
-        Player.valasz2 = valasz2;
+        Player.guess2 = guess2;
     }
 
-    public static String getValast1() {
-        return valast1;
+    public static String getGuess1() {
+        return guess1;
     }
 
-    public static String getValasz2() {
-        return valasz2;
+    public static String getGuess2() {
+        return guess2;
     }
         
     
     
-    public static void setNev1(String nev1) {
-        Player.nev1 = nev1;
+    public static void setName1(String name1) {
+        Player.name1 = name1;
     }
 
-    public static void setNev2(String nev2) {
-        Player.nev2 = nev2;
+    public static void setName2(String name2) {
+        Player.name2 = name2;
     }
-    public static String getNev1() {
-        return nev1;
+    public static String getName1() {
+        return name1;
     }
-     public static String getNev2() {
-        return nev2;
+     public static String getName2() {
+        return name2;
     }
     public static int getPontszam1() {
-        return pontszam_p1;
+        return pointPlayer1;
     }
     public static int getPontszam2() {
-        return pontszam_p2;
+        return pointPlayer2;
     }
     public static void setPontszam1(int pontszam) {
-        Player.pontszam_p1 = pontszam;
+        Player.pointPlayer1 = pontszam;
     }
     public static void setPontszam2(int pontszam) {
-        Player.pontszam_p2 = pontszam;
+        Player.pointPlayer2 = pontszam;
     }
 
    

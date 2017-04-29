@@ -35,8 +35,8 @@ public class FXMLController implements Initializable {
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException {
         if (!(tfPlayer1.getText().isEmpty()) && !(tfPlayer2.getText().isEmpty())) {
-            Player.setNev1(tfPlayer1.getText());
-            Player.setNev2(tfPlayer2.getText());
+            Player.setName1(tfPlayer1.getText());
+            Player.setName2(tfPlayer2.getText());
             Parent root;
             Stage stage;
             //stage = (Stage)button.getScene().getWindow();

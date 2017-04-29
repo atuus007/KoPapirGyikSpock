@@ -32,11 +32,11 @@
                   <Font size="21.0" />
                </font>
             </Label>
-            <ImageView fitHeight="135.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
-            <ImageView fitHeight="135.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button fx:id="btnNext" mnemonicParsing="false" onAction="#setOnResultAction" text="Következő menet" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <Button fx:id="btnSocre" mnemonicParsing="false" onAction="#setOnResultAction" text="Eredmény" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <Button fx:id="btnExit" mnemonicParsing="false" onAction="#setOnResultAction" text="Kilépés" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <ImageView fx:id="imgPlayer1" fitHeight="135.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
+            <ImageView fx:id="imgPlayer2" fitHeight="135.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button fx:id="btnNext" mnemonicParsing="false" onAction="#setOnResultAction" text="Next round" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button fx:id="btnSocre" mnemonicParsing="false" onAction="#setOnResultAction" text="Score" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button fx:id="btnExit" mnemonicParsing="false" onAction="#setOnResultAction" text="Exit" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
          </children>
       </GridPane>
    </children>

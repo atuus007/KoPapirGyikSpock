@@ -44,8 +44,8 @@ public class ScoreController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        player1.setText(Player.getNev1());
-        player2.setText(Player.getNev2());
+        player1.setText(Player.getName1());
+        player2.setText(Player.getName2());
         scorePlayer1.setText(Integer.toString(Player.getPontszam1()));
         scorePlayer2.setText(Integer.toString(Player.getPontszam2()));
         System.out.println(Player.getPontszam1());

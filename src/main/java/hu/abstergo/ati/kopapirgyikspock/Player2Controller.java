@@ -19,6 +19,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 /**
@@ -40,13 +41,15 @@ public class Player2Controller implements Initializable {
     private Button btnSpock;
     @FXML
     private Label lbPlayerName;
+    @FXML
+    private ImageView imgPlayer2;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        lbPlayerName.setText(Player.getNev2());
+        lbPlayerName.setText(Player.getName2());
       
 
     }
@@ -54,19 +57,19 @@ public class Player2Controller implements Initializable {
     @FXML
     private void setOnAction(ActionEvent event) {
         Button btn = (Button)event.getSource();
-       String asd="";
+      
         switch(btn.getId()){
-            case "btnRock": Player.setValasz2("Kő"); break;
-            case "btnPaper": Player.setValasz2("Papír"); break;
-            case "btnOllo": Player.setValasz2("Olló"); break;
-            case "btnLizzard": Player.setValasz2("Gyík"); break;
-            case "btnSpock": Player.setValasz2("Spock"); break;
+            case "btnRock": Player.setGuess2("Rock"); break;
+            case "btnPaper": Player.setGuess2("Paper"); break;
+            case "btnOllo": Player.setGuess2("Scissor"); break;
+            case "btnLizzard": Player.setGuess2("Lizzard"); break;
+            case "btnSpock": Player.setGuess2("Spock"); break;
             default:break;
             
           
         }
        
-        System.out.println(Player.getValasz2());
+        System.out.println(Player.getGuess2());
         
         
         
