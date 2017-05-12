@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package hu.abstergo.ati.kopapirgyikspock;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 /**
  *
  * @author Ati

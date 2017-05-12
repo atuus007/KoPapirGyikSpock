@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 package hu.abstergo.ati.kopapirgyikspock;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -47,14 +47,15 @@ public class Player1Controller implements Initializable {
     private String valasz;
     @FXML
     private ImageView imgPlayer1;
-    
+    private static  final org.slf4j.Logger logger = LoggerFactory.getLogger(Player1Controller.class);
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
            lbPlayerName.setText(Player.getName1());
-    }    
+           logger.info("Player1 Start");
+    }   
 
     @FXML
     private void setOnAction(ActionEvent event) {
@@ -88,7 +89,7 @@ public class Player1Controller implements Initializable {
             stage.setScene(scene);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(Player2Controller.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(Player2Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
