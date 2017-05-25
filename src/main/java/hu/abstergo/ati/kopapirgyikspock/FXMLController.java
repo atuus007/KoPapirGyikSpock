@@ -48,7 +48,7 @@ public class FXMLController implements Initializable {
             stage.setScene(scene);
             stage.show();
         }else{
-            System.out.println("Ne hagyd üresen!!");
+        
             
         }
         /*Parent player1 = FXMLLoader.load(getClass().getResource("/fxml/Player1.fxml"));

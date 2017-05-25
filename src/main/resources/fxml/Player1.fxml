@@ -1,66 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="1060.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.abstergo.ati.kopapirgyikspock.Player1Controller">
-   <children>
-      <HBox layoutX="115.0" layoutY="80.0">
-         <children>
-            <Button fx:id="btnRock" contentDisplay="TOP" layoutX="43.0" layoutY="55.0" mnemonicParsing="false" onAction="#setOnAction" prefHeight="25.0" prefWidth="73.0" text="Rock">
-               <graphic>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/rock.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="btnPaper" contentDisplay="TOP" layoutX="227.0" layoutY="165.0" mnemonicParsing="false" onAction="#setOnAction" prefHeight="25.0" prefWidth="73.0" text="Paper">
-               <graphic>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/paper.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="btnOllo" contentDisplay="TOP" layoutX="14.0" layoutY="152.0" mnemonicParsing="false" onAction="#setOnAction" prefHeight="25.0" prefWidth="73.0" text="Scissor">
-               <graphic>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/scissor.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="btnLizard" contentDisplay="TOP" layoutX="14.0" layoutY="188.0" mnemonicParsing="false" onAction="#setOnAction" prefHeight="25.0" prefWidth="73.0" text="Lizzard">
-               <graphic>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/lizzard.png" />
-                     </image></ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="btnSpock" contentDisplay="TOP" layoutX="14.0" layoutY="224.0" mnemonicParsing="false" onAction="#setOnAction" prefHeight="25.0" prefWidth="73.0" text="Spock">
-               <graphic>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/spock.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-         </children>
-      </HBox>
-      <Label fx:id="lbPlayerName" layoutX="13.0" layoutY="14.0" prefHeight="31.0" prefWidth="108.0">
-         <font>
-            <Font size="21.0" />
-         </font></Label>
-   </children>
+<AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="1060.0" 
+            xmlns="http://javafx.com/javafx/8" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="hu.abstergo.ati.kopapirgyikspock.Player1Controller">
+    <children>
+        <Label fx:id="lbPlayerName" layoutX="13.0" layoutY="14.0" prefHeight="31.0" prefWidth="108.0">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Label>
+        <HBox layoutX="115.0" layoutY="80.0">
+            <children>
+                <Button fx:id="btnRock" contentDisplay="TOP" layoutX="490.0" layoutY="63.0" mnemonicParsing="false" onAction="#setOnAction" prefHeight="25.0" prefWidth="73.0" text="Rock">
+                    <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/rock.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="btnPaper" contentDisplay="TOP" layoutX="490.0" layoutY="99.0" mnemonicParsing="false" onAction="#setOnAction" prefHeight="25.0" prefWidth="73.0" text="Paper">
+                    <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/paper.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="btnOllo" contentDisplay="TOP" layoutX="490.0" layoutY="132.0" mnemonicParsing="false" onAction="#setOnAction" prefHeight="25.0" prefWidth="73.0" text="Scissor">
+                    <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/scissor.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="btnLizard" contentDisplay="TOP" layoutX="490.0" layoutY="164.0" mnemonicParsing="false" onAction="#setOnAction" prefHeight="25.0" prefWidth="73.0" text="Lizzard">
+                    <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/lizzard.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="btnSpock" contentDisplay="TOP" layoutX="490.0" layoutY="197.0" mnemonicParsing="false" onAction="#setOnAction" prefHeight="25.0" prefWidth="73.0" text="Spock">
+                    <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/spock.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+        </HBox>     
+    </children>
 </AnchorPane>

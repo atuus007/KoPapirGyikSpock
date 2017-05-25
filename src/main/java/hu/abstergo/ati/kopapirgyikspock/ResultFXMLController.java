@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package hu.abstergo.ati.kopapirgyikspock;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.io.IOException;
@@ -44,141 +45,68 @@ public class ResultFXMLController implements Initializable {
     private ImageView imgPlayer1;
     @FXML
     private ImageView imgPlayer2;
+    @FXML
+    private Label lbWinner;
+    private GameRule gameRule;
+    @FXML
+    private Label lbWinnerName;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         lbP1.setText(Player.getName1());
         lbP2.setText(Player.getName2());
-        rule();
+        gameRule = new GameRule(lbWinner, lbWinnerName);
+        gameRule.rule();
         setPictures();
-        valueCleaning();
-    }
-    public void setPictures(){
-       
-        switch(Player.getGuess1()){
-            case "Rock": imgPlayer1.setImage(new Image("/img/rock.png")); break;
-            case "Paper": imgPlayer1.setImage(new Image("/img/paper.png")); break;
-            case "Scissor": imgPlayer1.setImage(new Image("/img/scissor.png")); break;
-            case "Lizzard": System.out.println("asdf"); break;
-            case "Spock": imgPlayer1.setImage(new Image("/img/spock.png")); break;
-            default:break;
-            
-          
-        }
-        switch(Player.getGuess2()){
-            case "Rock": imgPlayer2.setImage(new Image("/img/rock.png")); break;
-            case "Paper": imgPlayer2.setImage(new Image("/img/paper.png")); break;
-            case "Scissor": imgPlayer2.setImage(new Image("/img/scissor.png")); break;
-            case "Lizzard": System.out.println("asdf"); break;
-            case "Spock": imgPlayer2.setImage(new Image("/img/spock.png")); break;
-            default:break;
-            
-          
-        }
-    }
-    
-    public void rule() {
-        System.out.println(Player.getGuess1() + " " + Player.getGuess2());
-
-        if (Player.getGuess1().equals("Rock") && Player.getGuess2().equals("Rock")) {
-            Player.setPontszam1(Player.getPontszam1() + 1);
-            Player.setPontszam2(Player.getPontszam2() + 1);
-        }
-        if (Player.getGuess1().equals("Rock") && Player.getGuess2().equals("Paper")) {
-            Player.setPontszam2(Player.getPontszam2() + 1);
-        }
-        if (Player.getGuess1().equals("Rock") && Player.getGuess2().equals("Scissor")) {
-            Player.setPontszam1(Player.getPontszam1() + 1);
-        }
-        if (Player.getGuess1().equals("Rock") && Player.getGuess2().equals("Lizzard")) {
-            Player.setPontszam1(Player.getPontszam1() + 1);
-        }
-        if (Player.getGuess1().equals("Rock") && Player.getGuess2().equals("Spock")) {
-            Player.setPontszam2(Player.getPontszam2() + 1);
-        }
-        //////////////////////////////////////////////////
-
-        if (Player.getGuess1().equals("Paper") && Player.getGuess2().equals("Rock")) {
-            Player.setPontszam1(Player.getPontszam1() + 1);
-        }
-        if (Player.getGuess1().equals("Paper") && Player.getGuess2().equals("Paper")) {
-            Player.setPontszam2(Player.getPontszam2() + 1);
-            Player.setPontszam1(Player.getPontszam1() + 1);
-        }
-        if (Player.getGuess1().equals("Paper") && Player.getGuess2().equals("Scissor")) {
-            Player.setPontszam2(Player.getPontszam2() + 1);
-        }
-        if (Player.getGuess1().equals("Paper") && Player.getGuess2().equals("Lizzard")) {
-
-            Player.setPontszam2(Player.getPontszam2() + 1);
-        }
-        if (Player.getGuess1().equals("Paper") && Player.getGuess2().equals("Spock")) {
-
-            Player.setPontszam1(Player.getPontszam1() + 1);
-        }
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////
-        if (Player.getGuess1().equals("Scissor") && Player.getGuess2().equals("Rock")) {
-            Player.setPontszam2(Player.getPontszam2() + 1);
-        }
-        if (Player.getGuess1().equals("Scissor") && Player.getGuess2().equals("Paper")) {
-            Player.setPontszam1(Player.getPontszam1() + 1);
-        }
-        if (Player.getGuess1().equals("Scissor") && Player.getGuess2().equals("Scissor")) {
-            Player.setPontszam2(Player.getPontszam2() + 1);
-            Player.setPontszam1(Player.getPontszam1() + 1);
-        }
-        if (Player.getGuess1().equals("Scissor") && Player.getGuess2().equals("Lizzard")) {
-            Player.setPontszam1(Player.getPontszam1() + 1);
-        }
-        if (Player.getGuess1().equals("Scissor") && Player.getGuess2().equals("Spock")) {
-            Player.setPontszam2(Player.getPontszam2() + 1);
-        }
-        //////////////////////////////////////////////////////////////6
-        /////////////////////////////////////////////////////////////////
-        if (Player.getGuess1().equals("Lizzard") && Player.getGuess2().equals("Rock")) {
-            Player.setPontszam2(Player.getPontszam2() + 1);
-        }
-        if (Player.getGuess1().equals("Lizzard") && Player.getGuess2().equals("Paper")) {
-            Player.setPontszam1(Player.getPontszam1() + 1);
-        }
-        if (Player.getGuess1().equals("Lizzard") && Player.getGuess2().equals("Scissor")) {
-            Player.setPontszam2(Player.getPontszam2() + 1);
-
-        }
-        if (Player.getGuess1().equals("Lizzard") && Player.getGuess2().equals("Lizzard")) {
-            Player.setPontszam1(Player.getPontszam1() + 1);
-            Player.setPontszam2(Player.getPontszam2() + 1);
-        }
-        if (Player.getGuess1().equals("Lizzard") && Player.getGuess2().equals("Spock")) {
-            Player.setPontszam1(Player.getPontszam1() + 1);
-        }
-        ////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////
-        if (Player.getGuess1().equals("Spock") && Player.getGuess2().equals("Rock")) {
-            Player.setPontszam1(Player.getPontszam1() + 1);
-        }
-        if (Player.getGuess1().equals("Spock") && Player.getGuess2().equals("Paper")) {
-            Player.setPontszam2(Player.getPontszam2() + 1);
-        }
-        if (Player.getGuess1().equals("Spock") && Player.getGuess2().equals("Scissor")) {
-            Player.setPontszam1(Player.getPontszam1() + 1);
-
-        }
-        if (Player.getGuess1().equals("Spock") && Player.getGuess2().equals("Lizzard")) {
-            Player.setPontszam2(Player.getPontszam2() + 1);
-
-        }
-        if (Player.getGuess1().equals("Spock") && Player.getGuess2().equals("Spock")) {
-            Player.setPontszam1(Player.getPontszam1() + 1);
-            Player.setPontszam2(Player.getPontszam2() + 1);
-        }
+        //valueCleaning();
     }
 
-    private void valueCleaning() {
-        Player.setGuess1("");
-        Player.setGuess2("");
+    public void setPictures() {
+
+        switch (Player.getGuess1()) {
+            case "Rock":
+                imgPlayer1.setImage(new Image("/img/rock.png"));
+                break;
+            case "Paper":
+                imgPlayer1.setImage(new Image("/img/paper.png"));
+                break;
+            case "Scissor":
+                imgPlayer1.setImage(new Image("/img/scissor.png"));
+                break;
+            case "Lizzard":
+                imgPlayer1.setImage(new Image("/img/lizzard.png"));
+                
+                break;
+            case "Spock":
+                imgPlayer1.setImage(new Image("/img/spock.png"));
+                break;
+            default:
+                break;
+
+        }
+        switch (Player.getGuess2()) {
+            case "Rock":
+                imgPlayer2.setImage(new Image("/img/rock.png"));
+                break;
+            case "Paper":
+                imgPlayer2.setImage(new Image("/img/paper.png"));
+                break;
+            case "Scissor":
+                imgPlayer2.setImage(new Image("/img/scissor.png"));
+                break;
+            case "Lizzard":
+                imgPlayer2.setImage(new Image("/img/lizzard.png"));
+                break;
+            case "Spock":
+                imgPlayer2.setImage(new Image("/img/spock.png"));
+                break;
+            default:
+                break;
+
+        }
+        gameRule.setWinnerLabel();
     }
+
 
     @FXML
     private void setOnResultAction(ActionEvent event) {

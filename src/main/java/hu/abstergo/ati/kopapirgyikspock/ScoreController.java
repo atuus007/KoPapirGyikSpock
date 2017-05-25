@@ -42,6 +42,8 @@ public class ScoreController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -49,23 +51,35 @@ public class ScoreController implements Initializable {
         player2.setText(Player.getName2());
         scorePlayer1.setText(Integer.toString(Player.getPontszam1()));
         scorePlayer2.setText(Integer.toString(Player.getPontszam2()));
-        System.out.println(Player.getPontszam1());
+        
     }
 
     @FXML
     private void setGameOverAction(ActionEvent event) {
+        nagyonParaszt();
         Stage stage;
         Parent root;
-        //stage = (Stage)button.getScene().getWindow();
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         try {
             root = FXMLLoader.load(getClass().getResource("/fxml/ResultFXML.fxml"));
-            //stage.hide();
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
         } catch (IOException ex) {
           //  Logger.getLogger(Player2Controller.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public void nagyonParaszt(){
+        if (Player.isPlayer1Win() && Player.isPlayer2Win()) {
+            Player.setPontszam1(Player.getPontszam1()-1);
+            Player.setPontszam2(Player.getPontszam2()-1);
+            
+        }
+        if (Player.isPlayer1Win() && !Player.isPlayer2Win()) {
+            Player.setPontszam1(Player.getPontszam1()-1);
+        }
+        if (!Player.isPlayer1Win() && Player.isPlayer2Win()) {
+            Player.setPontszam2(Player.getPontszam2()-1);
         }
     }
 

@@ -50,6 +50,8 @@ public class Player1Controller implements Initializable {
     private static  final org.slf4j.Logger logger = LoggerFactory.getLogger(Player1Controller.class);
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
