@@ -75,7 +75,7 @@ public class Player1Controller implements Initializable {
         }
         
         
-        System.out.println(Player.getGuess1());
+        logger.info(Player.getGuess1());
         
         
         

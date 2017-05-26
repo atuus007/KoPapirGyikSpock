@@ -70,7 +70,6 @@ public class Player2Controller implements Initializable {
           
         }
        
-        System.out.println(Player.getGuess2());
         
         
         
