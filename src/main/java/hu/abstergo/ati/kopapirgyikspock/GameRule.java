@@ -12,17 +12,26 @@ import org.slf4j.LoggerFactory;
 /**
  *
  * @author Ati
+ * Ez az osztály implementálja a játék szabályait.
+ * 
  */
 public class GameRule {
 
     private static final Logger logger = LoggerFactory.getLogger(GameRule.class);
     private final Label lbResult;
     private final Label lbWinName;
-    public GameRule(final Label lbStatus, final Label lbName) {
-        this.lbResult = lbStatus;
+    /**
+     * @param lbRes Az aktuális kör nyertesének jelzése.
+     * @param lbName A nyertes játékos nevének kiirására szolgáló Label.
+     */
+    public GameRule(final Label lbRes, final Label lbName) {
+        this.lbResult = lbRes;
         this.lbWinName=lbName;
     }
-
+    
+    /**
+     * Azt dönti el játékosok alapán hogy melyik játékos kap pontot és hogy melyik játékos nyeri az aktuális kört.
+     */
     public void rule() {
 
         if (Player.getGuess1().equals("Rock") && Player.getGuess2().equals("Rock")) {
@@ -190,7 +199,10 @@ public class GameRule {
             logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
         }
     }
-
+    
+    /**
+     * Ennek a metódusnak az a feladata hogy kiirja két játékos közül a nyertest.
+     */
     public void setWinnerLabel() {
         if (Player.isPlayer1Win() && Player.isPlayer2Win()) {
             lbResult.setText("=");

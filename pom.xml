@@ -220,6 +220,9 @@
                     <instrumentation>					
                         <excludes>
                             <exclude>hu.abstergo.ati.kopapirgyikspock.FXMLController.class</exclude>
+                            <exclude>hu.abstergo.ati.kopapirgyikspock.Player1Controller.class</exclude>
+                            <exclude>hu.abstergo.ati.kopapirgyikspock.Player2Controller.class</exclude>
+                            <exclude>hu.abstergo.ati.kopapirgyikspock.ResultFXMLController.class</exclude>
                         </excludes>						
                     </instrumentation>
                 </configuration>

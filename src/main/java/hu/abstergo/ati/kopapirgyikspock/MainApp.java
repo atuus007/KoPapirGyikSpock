@@ -9,6 +9,10 @@ import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * @author Ati
+ * A játék főosztálya.
+ */
 public class MainApp extends Application {
 
     @Override

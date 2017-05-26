@@ -1,3 +1,4 @@
+//CHECKSTYLE:OFF
 package hu.abstergo.ati.kopapirgyikspock;
 
 import java.io.IOException;
