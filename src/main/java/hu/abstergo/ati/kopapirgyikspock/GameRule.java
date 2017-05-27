@@ -1,9 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package hu.abstergo.ati.kopapirgyikspock;
+/*-
+ * #%L
+ * KoPapirGyikSpock
+ * %%
+ * Copyright (C) 2017 Debreceni Egyetem, Informatikai Kar
+ * %%
+ * Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+ * #L%
+ */
 
 import javafx.scene.control.Label;
 import org.slf4j.Logger;
@@ -24,17 +38,20 @@ public class GameRule {
      * @param lbRes Az aktuális kör nyertesének jelzése.
      * @param lbName A nyertes játékos nevének kiirására szolgáló Label.
      */
+    
     public GameRule(final Label lbRes, final Label lbName) {
         this.lbResult = lbRes;
         this.lbWinName=lbName;
     }
-    
+     
     /**
+     * @param player1 Az első játékos választása.
+     * @param player2 A második játékos választása.
      * Azt dönti el játékosok alapán hogy melyik játékos kap pontot és hogy melyik játékos nyeri az aktuális kört.
      */
-    public void rule() {
+    public void rule(String player1, String player2) {
 
-        if (Player.getGuess1().equals("Rock") && Player.getGuess2().equals("Rock")) {
+        if (player1.equals("Rock") && player2.equals("Rock")) {
             Player.setPontszam1(Player.getPontszam1() + 1);
             Player.setPontszam2(Player.getPontszam2() + 1);
             Player.setPlayer1Win(true);
@@ -42,156 +59,156 @@ public class GameRule {
             logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
 
         }
-        if (Player.getGuess1().equals("Rock") && Player.getGuess2().equals("Paper")) {
+        if (player1.equals("Rock") && player2.equals("Paper")) {
             Player.setPontszam2(Player.getPontszam2() + 1);
             Player.setPlayer1Win(false);
             Player.setPlayer2Win(true);
             logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
         }
-        if (Player.getGuess1().equals("Rock") && Player.getGuess2().equals("Scissor")) {
+        if (player1.equals("Rock") && player2.equals("Scissor")) {
             Player.setPontszam1(Player.getPontszam1() + 1);
             Player.setPlayer1Win(true);
             Player.setPlayer2Win(false);
             logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
         }
-        if (Player.getGuess1().equals("Rock") && Player.getGuess2().equals("Lizzard")) {
+        if (player1.equals("Rock") && player2.equals("Lizzard")) {
             Player.setPontszam1(Player.getPontszam1() + 1);
             Player.setPlayer1Win(true);
             Player.setPlayer2Win(false);
             logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
         }
-        if (Player.getGuess1().equals("Rock") && Player.getGuess2().equals("Spock")) {
-            Player.setPontszam2(Player.getPontszam2() + 1);
-            Player.setPlayer1Win(false);
-            Player.setPlayer2Win(true);
-            logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
-        }
-
-        if (Player.getGuess1().equals("Paper") && Player.getGuess2().equals("Rock")) {
-            Player.setPontszam1(Player.getPontszam1() + 1);
-            Player.setPlayer1Win(true);
-            Player.setPlayer2Win(false);
-            logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
-        }
-        if (Player.getGuess1().equals("Paper") && Player.getGuess2().equals("Paper")) {
-            Player.setPontszam2(Player.getPontszam2() + 1);
-            Player.setPontszam1(Player.getPontszam1() + 1);
-            Player.setPlayer1Win(true);
-            Player.setPlayer2Win(true);
-            logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
-        }
-        if (Player.getGuess1().equals("Paper") && Player.getGuess2().equals("Scissor")) {
-            Player.setPontszam2(Player.getPontszam2() + 1);
-            Player.setPlayer1Win(false);
-            Player.setPlayer2Win(true);
-            logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
-        }
-        if (Player.getGuess1().equals("Paper") && Player.getGuess2().equals("Lizzard")) {
-            Player.setPontszam2(Player.getPontszam2() + 1);
-            Player.setPlayer1Win(false);
-            Player.setPlayer2Win(false);
-            logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
-        }
-        if (Player.getGuess1().equals("Paper") && Player.getGuess2().equals("Spock")) {
-
-            Player.setPontszam1(Player.getPontszam1() + 1);
-            Player.setPlayer1Win(true);
-            Player.setPlayer2Win(false);
-            logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
-        }
-
-        if (Player.getGuess1().equals("Scissor") && Player.getGuess2().equals("Rock")) {
-            Player.setPontszam2(Player.getPontszam2() + 1);
-            Player.setPlayer1Win(false);
-            Player.setPlayer2Win(true);
-            logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
-        }
-        if (Player.getGuess1().equals("Scissor") && Player.getGuess2().equals("Paper")) {
-            Player.setPontszam1(Player.getPontszam1() + 1);
-            Player.setPlayer1Win(true);
-            Player.setPlayer2Win(false);
-            logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
-        }
-        if (Player.getGuess1().equals("Scissor") && Player.getGuess2().equals("Scissor")) {
-            Player.setPontszam2(Player.getPontszam2() + 1);
-            Player.setPontszam1(Player.getPontszam1() + 1);
-            Player.setPlayer1Win(true);
-            Player.setPlayer2Win(true);
-            logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
-        }
-        if (Player.getGuess1().equals("Scissor") && Player.getGuess2().equals("Lizzard")) {
-            Player.setPontszam1(Player.getPontszam1() + 1);
-            Player.setPlayer1Win(true);
-            Player.setPlayer2Win(false);
-            logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
-        }
-        if (Player.getGuess1().equals("Scissor") && Player.getGuess2().equals("Spock")) {
+        if (player1.equals("Rock") && player2.equals("Spock")) {
             Player.setPontszam2(Player.getPontszam2() + 1);
             Player.setPlayer1Win(false);
             Player.setPlayer2Win(true);
             logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
         }
 
-        if (Player.getGuess1().equals("Lizzard") && Player.getGuess2().equals("Rock")) {
-            Player.setPontszam2(Player.getPontszam2() + 1);
-            Player.setPlayer1Win(false);
-            Player.setPlayer2Win(true);
-            logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
-        }
-        if (Player.getGuess1().equals("Lizzard") && Player.getGuess2().equals("Paper")) {
+        if (player1.equals("Paper") && player2.equals("Rock")) {
             Player.setPontszam1(Player.getPontszam1() + 1);
             Player.setPlayer1Win(true);
             Player.setPlayer2Win(false);
             logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
         }
-        if (Player.getGuess1().equals("Lizzard") && Player.getGuess2().equals("Scissor")) {
+        if (player1.equals("Paper") && player2.equals("Paper")) {
+            Player.setPontszam2(Player.getPontszam2() + 1);
+            Player.setPontszam1(Player.getPontszam1() + 1);
+            Player.setPlayer1Win(true);
+            Player.setPlayer2Win(true);
+            logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
+        }
+        if (player1.equals("Paper") && player2.equals("Scissor")) {
+            Player.setPontszam2(Player.getPontszam2() + 1);
+            Player.setPlayer1Win(false);
+            Player.setPlayer2Win(true);
+            logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
+        }
+        if (player1.equals("Paper") && player2.equals("Lizzard")) {
+            Player.setPontszam2(Player.getPontszam2() + 1);
+            Player.setPlayer1Win(false);
+            Player.setPlayer2Win(false);
+            logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
+        }
+        if (player1.equals("Paper") && player2.equals("Spock")) {
+
+            Player.setPontszam1(Player.getPontszam1() + 1);
+            Player.setPlayer1Win(true);
+            Player.setPlayer2Win(false);
+            logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
+        }
+
+        if (player1.equals("Scissor") && player2.equals("Rock")) {
+            Player.setPontszam2(Player.getPontszam2() + 1);
+            Player.setPlayer1Win(false);
+            Player.setPlayer2Win(true);
+            logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
+        }
+        if (player1.equals("Scissor") && player2.equals("Paper")) {
+            Player.setPontszam1(Player.getPontszam1() + 1);
+            Player.setPlayer1Win(true);
+            Player.setPlayer2Win(false);
+            logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
+        }
+        if (player1.equals("Scissor") && player2.equals("Scissor")) {
+            Player.setPontszam2(Player.getPontszam2() + 1);
+            Player.setPontszam1(Player.getPontszam1() + 1);
+            Player.setPlayer1Win(true);
+            Player.setPlayer2Win(true);
+            logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
+        }
+        if (player1.equals("Scissor") && player2.equals("Lizzard")) {
+            Player.setPontszam1(Player.getPontszam1() + 1);
+            Player.setPlayer1Win(true);
+            Player.setPlayer2Win(false);
+            logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
+        }
+        if (player1.equals("Scissor") && player2.equals("Spock")) {
+            Player.setPontszam2(Player.getPontszam2() + 1);
+            Player.setPlayer1Win(false);
+            Player.setPlayer2Win(true);
+            logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
+        }
+
+        if (player1.equals("Lizzard") && player2.equals("Rock")) {
+            Player.setPontszam2(Player.getPontszam2() + 1);
+            Player.setPlayer1Win(false);
+            Player.setPlayer2Win(true);
+            logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
+        }
+        if (player1.equals("Lizzard") && player2.equals("Paper")) {
+            Player.setPontszam1(Player.getPontszam1() + 1);
+            Player.setPlayer1Win(true);
+            Player.setPlayer2Win(false);
+            logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
+        }
+        if (player1.equals("Lizzard") && player2.equals("Scissor")) {
             Player.setPontszam2(Player.getPontszam2() + 1);
             Player.setPlayer1Win(false);
             Player.setPlayer2Win(true);
             logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
 
         }
-        if (Player.getGuess1().equals("Lizzard") && Player.getGuess2().equals("Lizzard")) {
+        if (player1.equals("Lizzard") && player2.equals("Lizzard")) {
             Player.setPontszam1(Player.getPontszam1() + 1);
             Player.setPontszam2(Player.getPontszam2() + 1);
             Player.setPlayer1Win(true);
             Player.setPlayer2Win(true);
             logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
         }
-        if (Player.getGuess1().equals("Lizzard") && Player.getGuess2().equals("Spock")) {
+        if (player1.equals("Lizzard") && player2.equals("Spock")) {
             Player.setPontszam1(Player.getPontszam1() + 1);
             Player.setPlayer1Win(true);
             Player.setPlayer2Win(false);
             logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
         }
 
-        if (Player.getGuess1().equals("Spock") && Player.getGuess2().equals("Rock")) {
+        if (player1.equals("Spock") && player2.equals("Rock")) {
             Player.setPontszam1(Player.getPontszam1() + 1);
             Player.setPlayer1Win(true);
             Player.setPlayer2Win(false);
             logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
         }
-        if (Player.getGuess1().equals("Spock") && Player.getGuess2().equals("Paper")) {
-            Player.setPontszam2(Player.getPontszam2() + 1);
-            Player.setPlayer1Win(false);
-            Player.setPlayer2Win(true);
-            logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
-        }
-        if (Player.getGuess1().equals("Spock") && Player.getGuess2().equals("Scissor")) {
-            Player.setPontszam1(Player.getPontszam1() + 1);
-            Player.setPlayer1Win(true);
-            Player.setPlayer2Win(false);
-            logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
-
-        }
-        if (Player.getGuess1().equals("Spock") && Player.getGuess2().equals("Lizzard")) {
+        if (player1.equals("Spock") && player2.equals("Paper")) {
             Player.setPontszam2(Player.getPontszam2() + 1);
             Player.setPlayer1Win(false);
             Player.setPlayer2Win(true);
             logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
+        }
+        if (player1.equals("Spock") && player2.equals("Scissor")) {
+            Player.setPontszam1(Player.getPontszam1() + 1);
+            Player.setPlayer1Win(true);
+            Player.setPlayer2Win(false);
+            logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
 
         }
-        if (Player.getGuess1().equals("Spock") && Player.getGuess2().equals("Spock")) {
+        if (player1.equals("Spock") && player2.equals("Lizzard")) {
+            Player.setPontszam2(Player.getPontszam2() + 1);
+            Player.setPlayer1Win(false);
+            Player.setPlayer2Win(true);
+            logger.info(Player.isPlayer1Win() + " " + Player.isPlayer2Win());
+
+        }
+        if (player1.equals("Spock") && player2.equals("Spock")) {
             Player.setPontszam1(Player.getPontszam1() + 1);
             Player.setPontszam2(Player.getPontszam2() + 1);
             Player.setPlayer1Win(true);
