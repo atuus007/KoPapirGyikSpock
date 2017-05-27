@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>hu.progtech.ati</groupId>
     <artifactId>KoPapirGyikSpock</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>jar</packaging>
     <description>KőPapírGykSpock - Egyszerű játék</description>
     <name>KoPapirGyikSpock</name>

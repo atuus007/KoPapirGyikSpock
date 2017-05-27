@@ -13,19 +13,27 @@ import static org.junit.Assert.*;
 import hu.abstergo.ati.kopapirgyikspock.Player;
 /**
  *
- * @author Fodor Edit
+ * @author Ati
+ * Player osztályhoz tartozó tesztek.
  */
-public class GameJUnitTest {
+public class PlayerJUnitTest {
     
-    public GameJUnitTest() {
+    public PlayerJUnitTest() {
     }
     @Test
     public void testOne(){
         int point=Player.getPontszam1();
-        double expRes=0;
-        assertEquals(expRes, point, 0);
+        int expRes=100;
+        
+        assertNotEquals(expRes, point);
     }
-  
+    @Test
+    public void testTwo(){
+       int point=Player.getPontszam2();
+       int expRes=100;
+       assertNotEquals(expRes,point);
+    }
+    
 
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
