@@ -71,7 +71,7 @@ public class ScoreController implements Initializable {
 
     @FXML
     private void setGameOverAction(ActionEvent event) {
-        nagyonParaszt();
+        bestSolution();
         Stage stage;
         Parent root;
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -84,7 +84,7 @@ public class ScoreController implements Initializable {
           //  Logger.getLogger(Player2Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    public void nagyonParaszt(){
+    public void bestSolution(){
         if (Player.isPlayer1Win() && Player.isPlayer2Win()) {
             Player.setPontszam1(Player.getPontszam1()-1);
             Player.setPontszam2(Player.getPontszam2()-1);

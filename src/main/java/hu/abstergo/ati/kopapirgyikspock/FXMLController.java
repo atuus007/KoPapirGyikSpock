@@ -34,6 +34,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.slf4j.LoggerFactory;
 
 public class FXMLController implements Initializable {
 
@@ -51,7 +52,7 @@ public class FXMLController implements Initializable {
     private TextField tfPlayer1;
     @FXML
     private Button btnExit;
-
+    private static  final org.slf4j.Logger logger = LoggerFactory.getLogger(FXMLController.class);
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException {
         if (!(tfPlayer1.getText().isEmpty()) && !(tfPlayer2.getText().isEmpty())) {
@@ -69,16 +70,8 @@ public class FXMLController implements Initializable {
             stage.show();
         }else{
         
-            
+            logger.info("Nem lehet üres");
         }
-        /*Parent player1 = FXMLLoader.load(getClass().getResource("/fxml/Player1.fxml"));
-       Scene player1_scene=new Scene(player1);
-       Stage player1_stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-       player1_stage.hide();
-       player1_stage.setScene(player1_scene);
-       player1_stage.show();*/
-
- /* */
     }
 
     @Override
