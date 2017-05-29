@@ -164,7 +164,7 @@ public class GameRuleJUnitTest {
     public void test13(){
         GameRule gr=new GameRule(null, null);
         gr.rule("Paper","Scissor");
-        boolean exp=true;
+        boolean exp=false;
         boolean res1=Player.isPlayer1Win();
         boolean res2=Player.isPlayer2Win();
         assertEquals(exp, (res1&&res2));
@@ -173,7 +173,7 @@ public class GameRuleJUnitTest {
     public void test14(){
         GameRule gr=new GameRule(null, null);
         gr.rule("Paper","Lizzard");
-        boolean exp=true;
+        boolean exp=false;
         boolean res1=Player.isPlayer1Win();
         boolean res2=Player.isPlayer2Win();
         assertEquals(exp, (res1&&res2));
@@ -182,7 +182,7 @@ public class GameRuleJUnitTest {
     public void test15(){
         GameRule gr=new GameRule(null, null);
         gr.rule("Paper","Spock");
-        boolean exp=true;
+        boolean exp=false;
         boolean res1=Player.isPlayer1Win();
         boolean res2=Player.isPlayer2Win();
         assertEquals(exp, (res1&&res2));
@@ -194,7 +194,7 @@ public class GameRuleJUnitTest {
         boolean exp=true;
         boolean res1=Player.isPlayer1Win();
         boolean res2=Player.isPlayer2Win();
-        assertEquals(exp, (res1&&res2));
+        assertNotEquals(exp, (res1&&res2));
     }
     @Test
     public void test17(){
@@ -203,13 +203,13 @@ public class GameRuleJUnitTest {
         boolean exp=true;
         boolean res1=Player.isPlayer1Win();
         boolean res2=Player.isPlayer2Win();
-        assertEquals(exp, (res1&&res2));
+        assertNotEquals(exp, (res1&&res2));
     }
     @Test
     public void test18(){
         GameRule gr=new GameRule(null, null);
         gr.rule("Scissor","Lizzard");
-        boolean exp=true;
+        boolean exp=false;
         boolean res1=Player.isPlayer1Win();
         boolean res2=Player.isPlayer2Win();
         assertEquals(exp, (res1&&res2));
