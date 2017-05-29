@@ -33,36 +33,53 @@ import javafx.scene.control.Label;
  * @author Fodor Edit
  */
 public class GameRuleJUnitTest {
-    private Label lbres;
-    private Label lbName;
-    private GameRule gr;
+    
+    GameRule gr;
     public GameRuleJUnitTest() {
-        Label lbres=new Label();
-        Label lbName=new Label();
-        lbres.setId("lbRes");
-        lbName.setId("lbName");
-        lbres.setText("Winner: ");
-        gr=new GameRule(lbres, lbName);
+//        Label lbres=new Label();
+//        Label lbName=new Label();
+//        lbres.setId("lbRes");
+//        lbName.setId("lbName");
+//        lbres.setText("Winner: ");
+//        gr=new GameRule(lbres, lbName);
     }
     
     //public GameRule gr=new GameRule(Label lbRes, Label lbName);
     @Test
     public void testLabelRes(){
-        String text=lbres.getText();
-        assertNotNull(text);
+//        String text=lbres.getText();
+//        assertNotNull(text);
     }
     @Test
     public void testOne(){
+        GameRule gr=new GameRule(null, null);
+        gr.rule("Spock", "Spock");
+        boolean exp=true;
+        boolean res=Player.isPlayer1Win();
+        assertEquals(exp, res);
+    
         
-//        Player.setPontszam1(0);
-//        Player.setPontszam2(0);
-//        int exp=1;
-//        String case1="Rock"; String case2="Rock";
-//        gr.rule(case1, case2);
-//        assertEquals(exp, Player.getPontszam1());
     }
+    @Test
+    public void testTwo(){
+        GameRule gr=new GameRule(null, null);
+        gr.rule("Spock", "Spock");
+        boolean exp=true;
+        boolean res=Player.isPlayer2Win();
+        assertEquals(exp, res);
     
+        
+    }
+     @Test
+    public void testThree(){
+        GameRule gr=new GameRule(null, null);
+        gr.rule("Rock", "Spock");
+        boolean exp=false;
+        boolean res=Player.isPlayer1Win();
+        assertEquals(exp, res);
     
+        
+    }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
