@@ -39,9 +39,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-/*
- * FXML Controller class
- *
+/**
+ * Az első játékoshoz tartozó UI.
  * @author Ati
  */
 public class Player1Controller implements Initializable {
@@ -66,8 +65,8 @@ public class Player1Controller implements Initializable {
     private static  final org.slf4j.Logger logger = LoggerFactory.getLogger(Player1Controller.class);
     /**
      * Initializes the controller class.
-     * @param url
-     * @param rb
+     * @param url Első paraméter amit inicializáláskor kap.
+     * @param rb A második paraméter egy objektumcsomag.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {

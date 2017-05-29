@@ -40,8 +40,8 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
- *
+ * Az eredményeket Vezérlő UI.
+ * Ez jeleniti meg hogy melyik játékos nyert.
  * @author Ati
  */
 public class ResultFXMLController implements Initializable {
@@ -65,7 +65,11 @@ public class ResultFXMLController implements Initializable {
     private GameRule gameRule;
     @FXML
     private Label lbWinnerName;
-
+     /**
+     * Initializes the controller class.
+     * @param url Első paraméter amit inicializáláskor kap.
+     * @param rb A második paraméter egy objektumcsomag.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         lbP1.setText(Player.getName1());
@@ -76,7 +80,9 @@ public class ResultFXMLController implements Initializable {
         setPictures();
         //valueCleaning();
     }
-
+     /**
+     * Ez állitja be a jétékosok válaszait.
+     */
     public void setPictures() {
 
         switch (Player.getGuess1()) {

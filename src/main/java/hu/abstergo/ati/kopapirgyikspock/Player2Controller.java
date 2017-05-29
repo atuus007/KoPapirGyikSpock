@@ -40,8 +40,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
- *
+ * Második játékost vezérlő UI.
  * @author Ati
  */
 public class Player2Controller implements Initializable {
@@ -61,8 +60,10 @@ public class Player2Controller implements Initializable {
     @FXML
     private ImageView imgPlayer2;
 
-    /**
+     /**
      * Initializes the controller class.
+     * @param url Első paraméter amit inicializáláskor kap.
+     * @param rb A második paraméter egy objektumcsomag.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -82,13 +83,7 @@ public class Player2Controller implements Initializable {
             case "btnLizzard": Player.setGuess2("Lizzard"); break;
             case "btnSpock": Player.setGuess2("Spock"); break;
             default:break;
-            
-          
         }
-       
-        
-        
-        
         Stage stage;
         Parent root;
         //stage = (Stage)button.getScene().getWindow();

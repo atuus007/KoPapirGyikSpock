@@ -38,7 +38,7 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
+ * A játékosok pontszámait megjelenitő UI.
  *
  * @author Ati
  */
@@ -84,6 +84,9 @@ public class ScoreController implements Initializable {
           //  Logger.getLogger(Player2Controller.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    /**
+     * Ez a metődus arra szolgál hogy mielőtt bezárodna ez az ablak az előtt mindig levon egyet a játékosok pontszámaiből.
+     */
     public void bestSolution(){
         if (Player.isPlayer1Win() && Player.isPlayer2Win()) {
             Player.setPontszam1(Player.getPontszam1()-1);

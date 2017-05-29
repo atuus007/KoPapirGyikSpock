@@ -36,6 +36,13 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Ez az osztály implementálja a játék kezdő UI-t.
+ *
+ * @author Ati
+ *
+ *
+ */
 public class FXMLController implements Initializable {
 
     @FXML
@@ -52,7 +59,8 @@ public class FXMLController implements Initializable {
     private TextField tfPlayer1;
     @FXML
     private Button btnExit;
-    private static  final org.slf4j.Logger logger = LoggerFactory.getLogger(FXMLController.class);
+    private static final org.slf4j.Logger logger = LoggerFactory.getLogger(FXMLController.class);
+
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException {
         if (!(tfPlayer1.getText().isEmpty()) && !(tfPlayer2.getText().isEmpty())) {
@@ -68,17 +76,24 @@ public class FXMLController implements Initializable {
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-        }else{
-        
+        } else {
+
             logger.info("Nem lehet üres");
         }
     }
 
+    /**
+     * Ez az metódus inicializálja a UI-t
+     *
+     * @author Ati
+     * @param url egy paraméter amit kap.
+     * @param rb Egy boundle paraméter.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
-
+    
     @FXML
     private void onAppExit(ActionEvent event) {
         Stage stage = (Stage) btnExit.getScene().getWindow();

@@ -24,9 +24,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- *
- * @author Ati
  * Ez az osztály implementálja a játék szabályait.
+ * @author Ati
+ * 
  * 
  */
 public class GameRule {
