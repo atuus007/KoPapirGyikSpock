@@ -70,7 +70,7 @@ public class GameRuleJUnitTest {
     
         
     }
-     @Test
+    @Test
     public void testThree(){
         GameRule gr=new GameRule(null, null);
         gr.rule("Rock", "Spock");
@@ -80,6 +80,141 @@ public class GameRuleJUnitTest {
     
         
     }
+     @Test
+    public void testFour(){
+        GameRule gr=new GameRule(null, null);
+        gr.rule("Rock", "Spock");
+        boolean exp=true;
+        boolean res=Player.isPlayer2Win();
+        assertEquals(exp, res);
+    }
+    @Test
+    public void testFive(){
+        GameRule gr=new GameRule(null, null);
+        gr.rule("Rock", "Rock");
+        boolean exp=true;
+        boolean res1=Player.isPlayer1Win();
+        boolean res2=Player.isPlayer2Win();
+        assertEquals(exp, (res1&&res2));
+    }
+    @Test
+    public void testSix(){
+        GameRule gr=new GameRule(null, null);
+        gr.rule("Rock", "Paper");
+        boolean exp=false;
+        boolean res1=Player.isPlayer1Win();
+        boolean res2=Player.isPlayer2Win();
+        assertEquals(exp, (res1&&res2));
+    }
+    @Test
+    public void testSeven(){
+        GameRule gr=new GameRule(null, null);
+        gr.rule("Rock", "Scissor");
+        boolean exp=false;
+        boolean res1=Player.isPlayer1Win();
+        boolean res2=Player.isPlayer2Win();
+        assertEquals(exp, (res1&&res2));
+    }
+    @Test
+    public void testEight(){
+        GameRule gr=new GameRule(null, null);
+        gr.rule("Rock", "Lizzard");
+        boolean exp=false;
+        boolean res1=Player.isPlayer1Win();
+        boolean res2=Player.isPlayer2Win();
+        assertEquals(exp, (res1&&res2));
+    }
+    @Test
+    public void testNine(){
+        GameRule gr=new GameRule(null, null);
+        gr.rule("Paper","Rock");
+        boolean exp=false;
+        boolean res1=Player.isPlayer1Win();
+        boolean res2=Player.isPlayer2Win();
+        assertEquals(exp, (res1&&res2));
+    }
+    @Test
+    public void testTen(){
+        GameRule gr=new GameRule(null, null);
+        gr.rule("Paper","Paper");
+        boolean exp=true;
+        boolean res1=Player.isPlayer1Win();
+        boolean res2=Player.isPlayer2Win();
+        assertEquals(exp, (res1&&res2));
+    }
+    @Test
+    public void testEleven(){
+        GameRule gr=new GameRule(null, null);
+        gr.rule("Paper","Paper");
+        boolean exp=true;
+        boolean res1=Player.isPlayer1Win();
+        boolean res2=Player.isPlayer2Win();
+        assertEquals(exp, (res1&&res2));
+    }
+    @Test
+    public void testTwelve(){
+        GameRule gr=new GameRule(null, null);
+        gr.rule("Scissor","Scissor");
+        boolean exp=true;
+        boolean res1=Player.isPlayer1Win();
+        boolean res2=Player.isPlayer2Win();
+        assertEquals(exp, (res1&&res2));
+    }
+     @Test
+    public void test13(){
+        GameRule gr=new GameRule(null, null);
+        gr.rule("Paper","Scissor");
+        boolean exp=true;
+        boolean res1=Player.isPlayer1Win();
+        boolean res2=Player.isPlayer2Win();
+        assertEquals(exp, (res1&&res2));
+    }
+     @Test
+    public void test14(){
+        GameRule gr=new GameRule(null, null);
+        gr.rule("Paper","Lizzard");
+        boolean exp=true;
+        boolean res1=Player.isPlayer1Win();
+        boolean res2=Player.isPlayer2Win();
+        assertEquals(exp, (res1&&res2));
+    }
+    @Test
+    public void test15(){
+        GameRule gr=new GameRule(null, null);
+        gr.rule("Paper","Spock");
+        boolean exp=true;
+        boolean res1=Player.isPlayer1Win();
+        boolean res2=Player.isPlayer2Win();
+        assertEquals(exp, (res1&&res2));
+    }
+    @Test
+    public void test16(){
+        GameRule gr=new GameRule(null, null);
+        gr.rule("Scissor","Rock");
+        boolean exp=true;
+        boolean res1=Player.isPlayer1Win();
+        boolean res2=Player.isPlayer2Win();
+        assertEquals(exp, (res1&&res2));
+    }
+    @Test
+    public void test17(){
+        GameRule gr=new GameRule(null, null);
+        gr.rule("Scissor","Paper");
+        boolean exp=true;
+        boolean res1=Player.isPlayer1Win();
+        boolean res2=Player.isPlayer2Win();
+        assertEquals(exp, (res1&&res2));
+    }
+    @Test
+    public void test18(){
+        GameRule gr=new GameRule(null, null);
+        gr.rule("Scissor","Lizzard");
+        boolean exp=true;
+        boolean res1=Player.isPlayer1Win();
+        boolean res2=Player.isPlayer2Win();
+        assertEquals(exp, (res1&&res2));
+    }
+    
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
